@@ -12,9 +12,10 @@ const stateTotal = document.getElementById('state-total')
     const staterejected = document.getElementById('state-rejected')
 
     const empty = document.getElementById("empty-job");
+    const available =document.getElementById("available");
 
 function showClick(tab){
-    
+    stayTab=tab
     
     for(let t of tabs){
         const tabName = document.getElementById('tab-' + t)
@@ -38,20 +39,26 @@ function showClick(tab){
 
     if(tab === 'all'){
         allContainer.classList.remove('hidden')
-         if(empty.classList.length <1){
+         if(allContainer.children.length <1){
             empty.classList.remove("hidden")
         }
     }
     else if(tab === 'interview'){
         interviewcontainer.classList.remove('hidden')
+        if(interviewcontainer.children.length < 1){
+            empty.classList.remove("hidden")
+        }
 
     }
     else{
         rejectedcontainer.classList.remove('hidden')
+        if(rejectedcontainer.children.length < 1){
+            empty.classList.remove("hidden")
+        }
     }
 
     
-    
+    updateState()
 
 }
 
@@ -84,9 +91,27 @@ document.getElementById("job-container").addEventListener('click',function(event
 })
 
 function updateState(){
-    stateTotal.innerText = allContainer.children.length;
-    stateinterview.innerText = interviewcontainer.children.length;
-    staterejected.innerText = rejectedcontainer.children.length;
+    // stateTotal.innerText = allContainer.children.length;
+    // stateinterview.innerText = interviewcontainer.children.length;
+    // staterejected.innerText = rejectedcontainer.children.length;
+
+    const counts = {
+        all : allContainer.children.length,
+        interview : interviewcontainer.children.length,
+        rejected : rejectedcontainer.children.length,
+    }
+    stateTotal.innerText =counts.all;
+    stateinterview.innerText = counts.interview;
+    staterejected.innerText =counts.rejected;
+
+    available.innerText = counts[stayTab];
+
+    if(counts[stayTab] <1){
+        empty.classList.remove("hidden")
+    }else{
+        empty.classList.add("hidden")
+    }
+    
 
 }
 updateState()
