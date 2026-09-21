@@ -41,6 +41,9 @@ function showClick(tab){
         allContainer.classList.remove('hidden')
          if(allContainer.children.length <1){
             empty.classList.remove("hidden")
+
+            
+           
         }
     }
     else if(tab === 'interview'){
@@ -57,8 +60,8 @@ function showClick(tab){
         }
     }
 
-    
     updateState()
+   
 
 }
 
@@ -72,14 +75,23 @@ document.getElementById("job-container").addEventListener('click',function(event
     const parent = card.parentNode;
     console.log(card)
     if(clickEl.classList.contains("interview")){
-        status.innerText = "interviewed"
-      interviewcontainer.appendChild(card)
+        status.innerText = "Interviewed";
+        status.classList.add(
+            "font-bold",
+            "text-sm",
+            "text-green-500");
+        interviewcontainer.appendChild(card)
       updateState()
         
     }
      if(clickEl.classList.contains("rejected")){
-        status.innerText = "rejected"
+        status.innerText = "Rejected";
+        status.classList.add(
+            "font-bold",
+            "text-sm",
+            "text-red-500");
         rejectedcontainer.appendChild(card)
+
         updateState()
         
     }
@@ -100,11 +112,19 @@ function updateState(){
         interview : interviewcontainer.children.length,
         rejected : rejectedcontainer.children.length,
     }
+
+    const totaljobsAvailable = counts.all + counts.interview + counts.rejected;
+  
     stateTotal.innerText =counts.all;
     stateinterview.innerText = counts.interview;
     staterejected.innerText =counts.rejected;
 
-    available.innerText = counts[stayTab];
+    // available.innerText = counts[stayTab];
+    //  available.innerText = `${allContainer.children.length} of ${counts[stayTab]} jobs`;
+     available.innerText = `${counts[stayTab]} of ${totaljobsAvailable} jobs`;
+
+
+    // available.innerText = `${} of ${counts[stayTab]} jobs`
 
     if(counts[stayTab] <1){
         empty.classList.remove("hidden")
@@ -115,3 +135,19 @@ function updateState(){
 
 }
 updateState()
+
+
+document.getElementById("tab-all").addEventListener("click", function(){
+    showClick("all");
+});
+
+document.getElementById("tab-interview").addEventListener("click", function(){
+    showClick("interview");
+});
+
+document.getElementById("tab-rejected").addEventListener("click", function(){
+    showClick("rejected");
+});
+
+
+showClick(stayTab);

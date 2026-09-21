@@ -20,25 +20,25 @@
   
     }
 </style>
-<body class="bg-base-200 p-7 w-11/12 mx-auto">
-    <nav >
+<body class="bg-base-200 p-7 w-full mx-auto">
+    <nav class="" >
         <h2 class="text-neutral text-[18px] font-bold mb-3">Job Application Tracker</h2>
-        <div class="flex justify-between">
-    <div class="card card-dash bg-base-100 w-60">
-  <div class="card-body">
-    <h2 class="card-title text-[#323B49] font-medium text-[14px]">Total</h2>
+        <div class="flex flex-col w-20 sm:flex-row justify-between">
+    <div class="card card-dash bg-base-300 w-60 mb-4">
+  <div class="card-body ">
+    <h2 class="card-title text-[#323B49] font-medium text-[14px] ">Total</h2>
     <p class="text-[#002C5C] font-bold text-4xl"><span id="state-total">0</span></p>
     
   </div>
 </div>
-    <div class="card card-dash bg-base-100 w-60">
+    <div class="card card-dash bg-base-300 w-60 mb-4">
   <div class="card-body">
     <h2 class="card-title text-[#323B49] font-medium text-[14px]">Interview</h2>
     <p class="text-[#10B981] font-bold text-4xl"><span id="state-interview">0</span></p>
    
   </div>
 </div>
-    <div class="card card-dash bg-base-100 w-60">
+    <div class="card card-dash bg-base-300 w-60">
   <div class="card-body">
     <h2 class="card-title text-[#323B49] font-medium text-[14px]">Rejected</h2>
     <p class="text-[#ef4444] font-bold text-4xl"><span id="state-rejected">0</span></p>
@@ -50,30 +50,30 @@
 </nav>
 <!-- jobs section -->
 <section class=" space-y-5">
-  <div class="flex justify-between pt-15">
-    <h3 class="text-[#002C5C] text-[18px] font-bold">Available Jobs</h3>
-    <p class="text-[#323B49] font-semibold text-[12px]"><span id="available">0 jobs</span></p>
+  <div class="flex flex-wrap sm:flex justify-between pt-15">
+    <h3 class=" text-[#002C5C] text-[18px] font-bold">Available Jobs</h3>
+    <span id="available" class="w-10 sm:text-[#323B49] font-semibold text-[12px]"></span>
     
   </div>
     
     <div class="mb-3">
-    <ul class="flex gap-3" >
-        <li><button id="tab-all" onclick="showClick('all')" class="btn">All</button></li>
-        <li><button id="tab-interview" onclick="showClick('interview')" class="btn">Interview</button></li>
-        <li><button id="tab-rejected" onclick="showClick('rejected')" class="btn">Rejected</button></li>
+    <ul class="flex  gap-3" >
+        <li><button id="tab-all" class="btn">All</button></li>
+        <li><button id="tab-interview"  class="btn">Interview</button></li>
+        <li><button id="tab-rejected" class="btn">Rejected</button></li>
     </ul>
   </div>
   
 </section>
 
 
-<div class="jobs-container" id="job-container">
+<div class="jobs-container w-11/12 sm:w-full" id="job-container">
 
   <section id="all-container" class="hidden">
-    <div class="card card-dash bg-base-100 w-full job-card ">
+    <div class="card-1 card-dash bg-base-300   w-full job-card ">
   <div class="card-body">
     <div class="flex justify-between">
-        <h2 class="card-title">Mobile First Corp </h2>
+        <h2 class="card-title text-[#002C5C] text-[20px] font-bold ">Tesla</h2>
    
 
      <div>
@@ -81,32 +81,32 @@
 </div>
     </div>
     
-     <p>React Native Developer</p>
-    <p><ul class="list-disc gap-5 color flex text-gray-500">
-        <li class="list-none">Remote</li>
+     <p class="text-gray-500" >Software Developer</p>
+    <p><ul class="list-disc gap-5 color flex flex-wrap text-gray-500">
+        <li class="list-none">Onsite</li>
         <li>Full Time</li>
         <li>$234,000 - $234,23</li>
     </ul></p>
     <div class="card card-dash bg-[#EEF4FF] w-[150px] p-4 job-status ">
-        Not Applide
+        <p id="job-status" class="font-bold " text-[#002C5C]>Not Applied</p>
     </div>
-    <p>Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
-  <div class="flex gap-4">
-      <div class=" border border-[#2EC291] rounded-md  ">
-      <button id="interview-btn" class="btn text-[#2EC291] font-semibold text-[14px] interview">INTERVIEW</button>
+    <p class="text-[#323B49]">Develop reliable software solutions and create user-friendly applications. Experience with JavaScript, React, and modern web development practices is preferred.</p>
+  <div class="flex flex-wrap gap-4">
+      <div class=" border border-[#2EC291] rounded-md   ">
+      <button id="interview-btn" class="btn  text-[#2EC291] font-semibold text-[14px] interview">INTERVIEW</button>
     </div>
     <div class="border border-red-500 rounded-md ">
-      <button id="rejected-btn"  class="btn  text-red-500 font-semibold text-[14px] rejected">REJECTED</button>
+      <button id="rejected-btn"  class=" btn text-red-500 font-semibold text-[14px] rejected">REJECTED</button>
     </div>
 </div>
   </div>
   
 </div>
 
-   <div class="card card-dash bg-base-100 w-full job-card ">
+   <div class="card-2 card-dash bg-base-300  mb-10 w-full job-card ">
   <div class="card-body">
     <div class="flex justify-between">
-        <h2 class="card-title">webflow Technology </h2>
+        <h2 class="card-title text-[#002C5C] text-[20px] font-bold">Meta </h2>
    
 
      <div>
@@ -114,17 +114,17 @@
 </div>
     </div>
     
-     <p>React Native Developer</p>
-    <p><ul class="list-disc gap-5 color flex text-gray-500">
+     <p class="text-gray-500">Frontend Developer</p>
+    <p><ul class="list-disc gap-5 color flex flex-wrap text-gray-500">
         <li class="list-none">Remote</li>
         <li>Full Time</li>
-        <li>$234,000 - $234,23</li>
+        <li>$115,000 - $145,000</li>
     </ul></p>
     <div class="card card-dash bg-[#EEF4FF] w-[111px] p-[12px] job-status">
-        <p id="job-status" onclick="clickAll('job-status')">Not Applide</p>
+        <p id="job-status" class="font-bold" text-[#002C5C]>Not Applied</p>
     </div>
-    <p>Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
-  <div class="flex gap-4">
+    <p class="text-[#323B49]">Build responsive web applications and interactive user interfaces. Must have experience with modern JavaScript frameworks and a strong understanding of frontend development.</p>
+  <div class="flex flex-wrap gap-4">
       <div class=" border border-[#2EC291] rounded-md  ">
       <button id="interview-btn" class="btn text-[#2EC291] font-semibold text-[14px] interview">INTERVIEW</button>
     </div>
@@ -133,75 +133,228 @@
     </div>
 </div>
   </div>
+  </div>
+
+
+    <div class="card-3 card-dash bg-base-300 mb-10 w-full job-card ">
+  <div class="card-body">
+    <div class="flex justify-between">
+        <h2 class="card-title text-[#002C5C] text-[20px] font-bold">Google </h2>
+   
+
+     <div>
+     <button  class="hover:cursor-pointer delete"><i class="fa-solid fa-trash-can pointer-events-none" style="color: rgb(111, 122, 116);"></i></button>
+</div>
+    </div>
+    
+     <p class="text-gray-500">Frontend Developer</p>
+    <p><ul class="list-disc gap-5 color flex flex-wrap text-gray-500">
+        <li class="list-none">Remote</li>
+        <li>Full Time</li>
+        <li>$120,000 - $150,000</li>
+    </ul></p>
+    <div class="card card-dash bg-[#EEF4FF] w-[111px] p-[12px] job-status">
+        <p id="job-status" class="font-bold" text-[#002C5C]>Not Applied</p>
+    </div>
+    <p class="text-[#323B49]">Build responsive and modern web applications for clients. Must have strong knowledge of HTML, CSS, JavaScript, and React.</p>
+  <div class="flex flex-wrap gap-4">
+      <div class=" border border-[#2EC291] rounded-md  ">
+      <button id="interview-btn" class="btn text-[#2EC291] font-semibold text-[14px] interview">INTERVIEW</button>
+    </div>
+    <div class="border border-red-500 rounded-md ">
+      <button id="rejected-btn"  class="btn  text-red-500 font-semibold text-[14px] rejected">REJECTED</button>
+    </div>
+</div>
+  </div>
+  </div>
+
+
+
+
+    <div class="card-4 card-dash bg-base-300 mb-10 w-full job-card ">
+  <div class="card-body">
+    <div class="flex justify-between">
+        <h2 class="card-title text-[#002C5C] text-[20px] font-bold">Microsoft</h2>
+   
+
+     <div>
+     <button  class="hover:cursor-pointer delete"><i class="fa-solid fa-trash-can pointer-events-none" style="color: rgb(111, 122, 116);"></i></button>
+</div>
+    </div>
+    
+     <p class="text-gray-500">Software Engineer</p>
+    <p><ul class="list-disc gap-5 color flex flex-wrap text-gray-500">
+        <li class="list-none">Hybrid</li>
+        <li>Full Time</li>
+        <li>$110,000 - $140,000</li>
+    </ul></p>
+    <div class="card card-dash bg-[#EEF4FF] w-[111px] p-[12px] job-status">
+        <p id="job-status" class="font-bold" text-[#002C5C]>Not Applied</p>
+    </div>
+    <p class="text-[#323B49]">Develop scalable software solutions and work with a team to create reliable and user-friendly applications.</p>
+  <div class="flex flex-wrap gap-4">
+      <div class=" border border-[#2EC291] rounded-md  ">
+      <button id="interview-btn" class="btn text-[#2EC291] font-semibold text-[14px] interview">INTERVIEW</button>
+    </div>
+    <div class="border border-red-500 rounded-md ">
+      <button id="rejected-btn"  class="btn  text-red-500 font-semibold text-[14px] rejected">REJECTED</button>
+    </div>
+</div>
+  </div>
+  </div>
+
+
+
+    <div class="card-5 card-dash bg-base-300 mb-10 w-full 0 job-card ">
+  <div class="card-body">
+    <div class="flex justify-between">
+        <h2 class="card-title text-[#002C5C] text-[20px] font-bold">Amazon </h2>
+   
+
+     <div>
+     <button  class="hover:cursor-pointer delete"><i class="fa-solid fa-trash-can pointer-events-none" style="color: rgb(111, 122, 116);"></i></button>
+</div>
+    </div>
+    
+     <p class="text-gray-500">Web Developer</p>
+    <p><ul class="list-disc gap-5 color flex flex-wrap text-gray-500">
+        <li class="list-none">Remote</li>
+        <li>Full Time</li>
+        <li>$234,000 - $234,23</li>
+    </ul></p>
+    <div class="card card-dash bg-[#EEF4FF] w-[111px] p-[12px] job-status">
+        <p id="job-status" class="font-bold" text-[#002C5C]>Not Applied</p>
+    </div>
+    <p class="text-[#323B49]">Create engaging user interfaces and improve website performance. Experience with modern frontend technologies is preferred.</p>
+  <div class="flex flex-wrap gap-4">
+      <div class=" border border-[#2EC291] rounded-md  ">
+      <button id="interview-btn" class="btn text-[#2EC291] font-semibold text-[14px] interview">INTERVIEW</button>
+    </div>
+    <div class="border border-red-500 rounded-md ">
+      <button id="rejected-btn"  class="btn  text-red-500 font-semibold text-[14px] rejected">REJECTED</button>
+    </div>
+</div>
+  </div>
+  </div>
+
+
+
+
+    <div class="card-6 card-dash bg-base-300 mb-10 w-full job-card ">
+  <div class="card-body">
+    <div class="flex justify-between">
+        <h2 class="card-title text-[#002C5C] text-[20px] font-bold">Spotify </h2>
+   
+
+     <div>
+     <button  class="hover:cursor-pointer delete"><i class="fa-solid fa-trash-can pointer-events-none" style="color: rgb(111, 122, 116);"></i></button>
+</div>
+    </div>
+    
+     <p class="text-gray-500">Frontend Developer</p>
+    <p><ul class="list-disc gap-5 color flex flex-wrap text-gray-500">
+        <li class="list-none">Remote</li>
+        <li>Full Time</li>
+        <li>$105,000 - $135,000</li>
+    </ul></p>
+    <div class="card card-dash bg-[#EEF4FF] w-[111px] p-[12px] job-status">
+        <p id="job-status" class="font-bold" text-[#002C5C]>Not Applied</p>
+    </div>
+    <p class="text-[#323B49]">Work on exciting digital products and build clean, responsive interfaces for users across different devices.</p>
+  <div class="flex flex-wrap gap-4">
+      <div class=" border border-[#2EC291] rounded-md  ">
+      <button id="interview-btn" class="btn text-[#2EC291] font-semibold text-[14px] interview">INTERVIEW</button>
+    </div>
+    <div class="border border-red-500 rounded-md ">
+      <button id="rejected-btn"  class="btn  text-red-500 font-semibold text-[14px] rejected">REJECTED</button>
+    </div>
+</div>
+  </div>
+  </div>
+
+
+    <div class="card-7 card-dash bg-base-300 mb-10 w-full job-card ">
+  <div class="card-body">
+    <div class="flex justify-between">
+        <h2 class="card-title text-[#002C5C] text-[20px] font-bold">Netflix </h2>
+   
+
+     <div>
+     <button  class="hover:cursor-pointer delete"><i class="fa-solid fa-trash-can pointer-events-none" style="color: rgb(111, 122, 116);"></i></button>
+</div>
+    </div>
+    
+     <p class="text-gray-500" >UI Engineer</p>
+    <p><ul class="list-disc gap-5 color flex flex-wrap text-gray-500">
+        <li class="list-none">Hybrid</li>
+        <li>Full Time</li>
+        <li>$125,000 - $160,000</li>
+    </ul></p>
+    <div class="card card-dash bg-[#EEF4FF] w-[111px] p-[12px] job-status">
+        <p id="job-status"  class="font-bold" text-[#002C5C]>Not Applied</p>
+    </div>
+    <p class="text-[#323B49]">Design and develop web applications while collaborating with designers and backend developers to deliver quality products.</p>
+  <div class="flex flex-wrap gap-4">
+      <div class=" border border-[#2EC291] rounded-md  ">
+      <button id="interview-btn" class="btn text-[#2EC291] font-semibold text-[14px] interview">INTERVIEW</button>
+    </div>
+    <div class="border border-red-500 rounded-md ">
+      <button id="rejected-btn"  class="btn  text-red-500 font-semibold text-[14px] rejected">REJECTED</button>
+    </div>
+</div>
+  </div>
+  </div>
+
+
+    <div class="card-8 card-dash bg-base-300 w-full job-card ">
+  <div class="card-body">
+    <div class="flex justify-between">
+        <h2 class="card-title text-[#002C5C] text-[20px] font-bold ">Adobe </h2>
+   
+
+     <div>
+     <button  class="hover:cursor-pointer delete"><i class="fa-solid fa-trash-can pointer-events-none" style="color: rgb(111, 122, 116);"></i></button>
+</div>
+    </div>
+    
+     <p class="text-gray-500">React Developer</p>
+    <p><ul class="list-disc gap-5 color flex flex-wrap text-gray-500">
+        <li class="list-none">Remote</li>
+        <li>Full Time</li>
+        <li>$95,000 - $125,000</li>
+    </ul></p>
+    <div class="card card-dash bg-[#EEF4FF] w-[111px] p-[12px] job-status">
+        <p id="job-status" class="font-bold" text-[#002C5C]>Not Applied</p>
+    </div>
+    <p class="text-[#323B49]">Build modern web experiences for high-profile clients. Must be familiar with responsive design and current web development practices.</p>
+  <div class="flex flex-wrap gap-4">
+      <div class=" border border-[#2EC291] rounded-md  ">
+      <button id="interview-btn" class="btn text-[#2EC291] font-semibold text-[14px] interview">INTERVIEW</button>
+    </div>
+    <div class="border border-red-500 rounded-md ">
+      <button id="rejected-btn"  class="btn  text-red-500 font-semibold text-[14px] rejected">REJECTED</button>
+    </div>
+</div>
+  </div>
+  </div>
   
-
-
-  
-
 </section>
 <section class="hidden interview" id="interview-container"></section>
 <section class="hidden rejected" id="rejected-container"></section>
 </div>
 
-
-
- 
-
-<!-- <section>
-     <nav >
-        <h2 class="text-neutral text-[18px] font-bold mb-3">Job Application Tracker</h2>
-        <div class="flex justify-between">
-    <div class="card card-dash bg-base-100 w-60">
-  <div class="card-body">
-    <h2 class="card-title text-[#323B49] font-medium text-[14px]">Total</h2>
-    <p class="text-[#002C5C] font-bold text-4xl"><span id="state-total">0</span></p>
-   
-  </div>
-</div>
-    <div class="card card-dash bg-base-100 w-60">
-  <div class="card-body">
-    <h2 class="card-title text-[#323B49] font-medium text-[14px]">Interview</h2>
-    <p class="text-[#10B981] font-bold text-4xl"><span id="state-interview">0</span></p>
-   
-  </div>
-</div>
-    <div class="card card-dash bg-base-100 w-60">
-  <div class="card-body">
-    <h2 class="card-title text-[#323B49] font-medium text-[14px]">Rejected</h2>
-    <p class="text-[#ef4444] font-bold text-4xl"><span id="state-rejected">0</span></p>
-   
-  </div>
-</div>
-</div>
-  
-</nav>
-</section> -->
-
-
-
+<!-- image secion -->
 <section id="empty-job" class=" space-y-5 ">
-    <!-- <div class="flex justify-between pt-15">
-        <h3 class="text-[#002C5C] text-[18px] font-bold">Available Jobs</h3>
-    <p class="text-[#323B49] font-semibold text-[12px]">8 jobs</p>
-   
-    </div>
-    <div class="">
-    <ul class="flex gap-3" >
-        <li><button class="btn">All</button></li>
-        <li><button class="btn">Interview</button></li>
-        <li><button class="btn">Rejected</button></li>
-    </ul>
-</div> -->
 
-<div  class="w-full p-50 ">
-  <div class="w-30 mx-auto ">
+<div  class="w-full  px-4 py-20 ">
+  <div class="w-20 sm:w-24 mx-auto ">
     
     <img src="./image/jobs.png" alt="">
     
   </div>
-  <div class="text-center">
-    <p>No jobs available</p>
-    <p >Check back soon for new job opportunities</p>
+  <div class=" text-center mt-4">
+    <p class="font-medium">No jobs available</p>
+    <p class="text-sm text-gray-500">Check back soon for new job opportunities</p>
   </div>
   
   
@@ -209,7 +362,7 @@
 </section>
 
 
-<script src="/index.js"></script>
-<!-- <script src="./script/machin.js"></script> -->
+<script src="./index.js"></script>
+
 </body>
 </html>
